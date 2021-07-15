@@ -17,19 +17,23 @@
             </div>
 
             <div class="newDiv" *ngFor="let post of reddit.data.children|slice:0:1">
-                <h2>{{post.data.title}}</h2>
+                
+                    <h2>Top Post</h2>
+                    <hr>
+                    <h2>{{post.data.title}}</h2>
                     <p>Author: {{post.data.author}}</p>
                     <p><img src="{{post.data.thumbnail}}"></p>
                     <p><a href="{{post.data.url}}">View Full Post</a></p>
-    
+                
+                    
                 </div>
-                <div *ngFor="let post of reddit.data.children; index as i">
-                    <div class="newDiv" *ngIf="i < 10">
+
+                <div class ="newDiv" *ngFor="let post of reddit.data.children|slice:0:10; index as i ">
                         <h2>{{post.data.title}}</h2>
+                        <hr>
                         <p>Author: {{post.data.author}}</p>
                         <p><img src="{{post.data.thumbnail}}"></p>
                         <p><a href="{{post.data.url}}">View Full Post</a></p>
-                    </div>
                 </div>
 
                 
