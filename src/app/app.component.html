@@ -25,10 +25,10 @@
                     <p><img src="{{post.data.thumbnail}}"></p>
                     <p><a href="{{post.data.url}}">View Full Post</a></p>
                 
-                    
+                    <button (click) ="togglePost()">View Top 10 Posts</button>
                 </div>
 
-                <div class ="newDiv" *ngFor="let post of reddit.data.children|slice:0:10; index as i ">
+                <div [ngStyle] = "styleList" class ="newDiv" *ngFor="let post of reddit.data.children|slice:0:10; index as i ">
                         <h2>{{post.data.title}}</h2>
                         <hr>
                         <p>Author: {{post.data.author}}</p>
